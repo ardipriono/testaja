@@ -3,8 +3,6 @@ package Soal1;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.*;
-import java.io.*;
-import javax.swing.*;
 
 /**
  * Created by ardipriono on 5/16/17.
@@ -131,7 +129,7 @@ class soal_7 {
 
 
 
-class LoopTesting {
+class soal_8{
     public static void main(String[] args) {
         ArrayList<Integer> arrlist = new ArrayList<Integer>();
         arrlist.add(11);
@@ -155,11 +153,12 @@ class LoopTesting {
 }
 
 
-class Animal {
 
-    String name;
+class Animals{
 
-    String getName() {
+    public String name;
+
+    public String getName() {
         return this.name;
     }
 
@@ -167,27 +166,63 @@ class Animal {
         this.name = name;
     }
 
-    public class Demo extends Thread {
-        public void run(){
-            Thread t1 = Thread.currentThread();
-            System.out.println("Test, status" + t1.isAlive());
+    private void main() {
+        Boolean isAlive;
     }
 
-}
-    public static void main(String[] args){
-        Animal hewan = new Animal();
+    public static void main(String[] args) {
+        Animals hewan = new Animals();
         hewan.setName("Kucing Garong");
-
         System.out.println("Animal Name : " + hewan.getName());
 
-        Demo d1 = new Demo();
-        d1.start();
-        try {
-            d1.join();
+        Integer animalAge = new Integer(10);
+        System.out.println("Usia Hewan: " + animalAge);
+
+        Boolean isAlive = true;
+        System.out.println("isAlive : "+ isAlive);
+    }
+
+}
+
+
+
+// Soal Nomer 10
+
+class Animalss {
+    public void bark() {
+        System.out.println("animalss is bark");
+    }
+
+    public void meow() {
+        System.out.println("animalss is meow");
+    }
+
+
+    public class Dog extends Animalss {
+        public void bark() {
+            System.out.println("Dog is bark");
         }
-        catch (InterruptedException e){
-            e.printStackTrace();
+    }
+
+    public class Cat extends Animalss {
+        public void meow() {
+            System.out.println("cat is meow");
         }
-        System.out.println("From main, status = " + d1.isAlive());
+    }
+
+    public class TestAnimal {
+        public void main(String[] args) {
+            Animalss a = new Animalss();
+            Animalss b = new Dog();
+            Animalss c = new Cat();
+
+            a.bark();
+            b.meow();
+            a.meow();
+
+        }
     }
 }
+
+
+
